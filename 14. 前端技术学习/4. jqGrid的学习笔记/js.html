@@ -1,0 +1,100 @@
+<html>
+
+<button onclick="test7()">按钮</button>
+<script>
+
+function  test(){
+
+		function Person(){}
+		var person = new Person();
+		person.name = "Joy";
+		person.age = 10;
+		person.sex = "man";
+		person.sayHello = function(){
+			window.alert("Hello World!");
+		}
+
+		//window.alert(person.name+","+person.age+","+person.sex);
+		person.sayHello();
+}
+
+
+
+function  Student(){
+	this.name = "Joy";
+	this.age = 12;
+	this.sayHello = function(){
+		window.alert("Hello World!");
+	}
+}
+
+		function test2(){
+			var stud = new Student();
+			window.alert(stud.name+","+stud.age);
+			stud.sayHello();
+		}
+
+function  Teacher(){
+	var name = "Joy";//私有属性
+	var age = 12;//私有属性
+	function sayHello(){//私有方法
+		window.alert("Hello World!");
+	}
+	this.sayHi = function(){//公开方法
+		sayHello();
+		window.alert(name+","+age);
+	}
+}
+
+function test3(){
+	var teacher = new Teacher();
+	teacher.sayHi();
+	window.alert(teacher.name + ","+ teacher.age);
+	
+}
+
+
+function  Police(name,age){
+	this.name = name;
+	this.age = age;
+	this.sayHello = function(){
+		window.alert("Hello World!"+"I'm "+name+","+age+"岁了。");
+	}
+}
+
+function test5(){
+	var police = new Police("Joy",12);
+	police.sayHello();
+}
+
+function thisTest()
+  {
+  alert("777");
+      this.userName= 'outer userName';
+      function innerThisTest(){
+        var userName="inner userName";
+        alert(userName); //inner userName
+        alert(this.userName); //outer userName
+      }
+     return innerThisTest;
+  }
+  
+  
+function test6(){
+	alert("aaa");
+	thisTest();
+}
+
+
+var fun = function(){
+	window.alert("Hi!");
+}
+
+function test7(){
+	fun();
+}
+
+</script>
+
+
+</html>

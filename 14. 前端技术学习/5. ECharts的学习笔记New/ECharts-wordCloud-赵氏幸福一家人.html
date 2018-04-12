@@ -1,0 +1,154 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>赵氏幸福一家人</title>
+</head>
+
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="height:400px"></div><br>
+    <!-- 定义一个按钮 -->
+    <div style="float:right;" ><type id = "btn" type="button" onclick="test()" >改变一下</input> </div>
+    <!-- ECharts单文件引入 -->
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+
+    <script type="text/javascript">
+        // 路径配置
+        require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+      
+    function test(){
+         // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/wordCloud' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function(echarts){
+            // 基于准备好的dom，初始化echarts图表
+            var myChart =  echarts.init(document.getElementById('main'));   
+            function createRandomItemStyle() {
+                return {
+                    normal: {
+                        color: 'rgb(' + [
+                            Math.round(Math.random() * 160),
+                            Math.round(Math.random() * 160),
+                            Math.round(Math.random() * 160)
+                        ].join(',') + ')'
+                    }
+                };
+            }
+
+            option = {
+                title: {
+                    text: '赵氏幸福一家人',
+                    link: 'http://www.baidu.com'
+                },
+                tooltip: {
+                    show: true
+                },
+                series: [{
+                    name: '赵氏幸福一家人',
+                    type: 'wordCloud',
+                    size: ['80%', '80%'],
+                    textRotation : [0, 45, 90, -45],
+                    textPadding: 0,
+                    autoSize: {
+                        enable: true,
+                        minSize: 14
+                    },
+                    data: [
+                        {
+                            name: "福源",
+                            value: 10000,
+                            itemStyle: {
+                                normal: {
+                                    color: 'black'
+                                }
+                            }
+                        },
+                        {
+                            name: "赵西元",
+                            value: 6181,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "赵红",
+                            value: 4386,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "北京邮电大学",
+                            value: 4055,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "山东科技大学",
+                            value: 2467,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "山东省第一中学",
+                            value: 2244,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "曹城镇二完小",
+                            value: 1898,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "赵硕姐姐",
+                            value: 1484,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "赵西萍",
+                            value: 1112,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "赵花英",
+                            value: 965,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "赵如民",
+                            value: 847,
+                            itemStyle: createRandomItemStyle()
+                        },
+                         {
+                            name: "曹县民喜中学",
+                            value: 847,
+                            itemStyle: createRandomItemStyle()
+                        },
+                         {
+                            name: "曹县三桐中学",
+                            value: 847,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "幸福一家人",
+                            value: 582,
+                            itemStyle: createRandomItemStyle()
+                        }
+                        ]
+                    }]
+                };
+                    
+                // 为echarts对象加载数据 
+                myChart.setOption(option); 
+        });
+}     
+        //打开页面理解显示
+        test();
+    </script>
+</body>
+
+
+</html>
+
+

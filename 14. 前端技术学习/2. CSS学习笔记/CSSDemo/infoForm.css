@@ -1,0 +1,13 @@
+table#table1{
+	color:red;
+	background-color:yellow;
+}
+.tableCaption{
+	color : green;
+	background-color:blue;
+	font-size:xx-large;
+}
+td[class="name"]{
+	font-size:xx-large;
+	color:black;
+}

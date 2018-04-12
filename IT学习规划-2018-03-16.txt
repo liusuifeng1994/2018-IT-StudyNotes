@@ -1,0 +1,13 @@
+
+
+1. Spring 的注解意义；
+比如 @Resource、@Controller等；
+
+系统学习Spring的整体。
+
+
+1. HBase的学习；（重点）
+2. Hive的学习；
+3. Mybatis Generator的学习；
+4. JMQ；
+

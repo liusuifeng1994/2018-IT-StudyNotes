@@ -1,0 +1,25 @@
+近期Java学习规划
+1. Java 高并发问题（重点中的重点）
+		--后天开发必问问题
+2. SSH框架原理 
+		--深层次问题
+		
+3. Java 的集合
+	HashMap、HashTable等
+
+4. 算法学习（刷题）
+
+
+
+
+1. Spring 的注解意义；
+比如 @Resource、@Controller等；
+
+系统学习Spring的整体。
+
+
+1. HBase的学习；（重点）
+2. Hive的学习；
+3. Mybatis Generator的学习；
+4. JMQ；
+

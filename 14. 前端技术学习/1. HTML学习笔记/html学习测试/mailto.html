@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>iframe</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	</head>
+	<body>
+		<table align="center">
+			<caption>mailto发送邮件测试</caption>
+			<form name='sendmail' action='mailto:' >
+				<tr>
+					<th>收件人</th>
+					<td><input name='to' type='text' value='14862523243@qq.com'></td>
+				</tr>
+				<tr>
+					<th>抄送</th>
+					<td><input name='cc' type='text' value='zhaohongzxy@bupt.edu.cn'></td>
+				</tr>
+				<tr>
+					<th>秘送</th>
+					<td><input name='bcc' type='text'></td>
+				</tr>
+				<tr>
+					<th>主题</th>
+					<td><input name='subject' type='text'></td>
+				</tr>
+				<tr>
+					<th>内容</th>
+					<td><textarea name='body' type='text' rows="3" cols="20"></textarea>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+					<input name='submit' type='submit' value='发送' ></td>
+				</tr>
+				
+			</form>
+		</table>
+		<br>
+		<a href="mailto:zhaohongzxy@163.com?cc=zhaohongzxy@bupt.edu.cn&bcc=zhaohongzxy@foxmail.com&subject=测试&body=BUPTmailto测试">send mail</a>
+
+	</body>
+</html>
