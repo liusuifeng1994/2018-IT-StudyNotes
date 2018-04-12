@@ -1,0 +1,14 @@
+git config --global user.name "zhaoxiyuan"
+git config --global user.email "zhaohongzxy@163.com"     	绑定用户
+
+ssh-keygen -t rsa -C "zhaohongzxy@163.com" 
+ssh -T git@github.com     								验证ssh权限
+
+cd D:\\java\\EclipseWorkspace\\MyFirstDubbo  				进入项目目录
+git init										初始化，创建一个.git文件夹
+git add .										将所有文件添加到仓库
+git commit -m "First Commit"					提交文件，双引号内是提交注释。
+git remote add origin https://github.com/zhaoxiyuan/MyFirstDubbo.git关联GitHub的仓库
+git push -u origin master                       上传工程代码
+git pull                                      首次下拉工程
+git pull origin master --allow-unrelated-histories    更新工程
