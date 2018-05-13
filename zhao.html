@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>测试</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+</head>
+<body>
+	<div id="info" align="center">
+		<input type="text" id="key" name="key" />
+		<input type="text" id="value" name="value" />
+		<input type="checkbox" id="intercept" name="intercept"/>拦截
+		<input type="checkbox" id="black" name="black" />拉黑
+	</div>
+	<div id="buttons" align="center">
+		<input type="button" id="add" value="添加" onclick="addRow()" />
+		<input type="button" id="post" value="发送" onclick="send()" />
+	</div>
+	<table align="center" id="table" border="1" style="width: 60%;text-align: center;border:1px solid lightgreen">
+		<tr>
+			<td>key</td>
+			<td>value</td>
+			<td>拉黑</td>
+			<td>拦截</td>
+			<td>操作</td>
+		</tr>
+	</table>
+
+	<script type="text/javascript">
+		var table = document.getElementById('table');
+		function addRow() {
+			var key = document.getElementById('key').value;
+			var value = document.getElementById('value').value;
+			var intercept = document.getElementById('intercept').checked;
+			var black = document.getElementById('black').checked;
+			// console.log(key, value, intercept, black);
+			if (key && value) {
+				// 新增行
+				var newTr = table.insertRow();
+				// 新增列
+				var newTd0 = newTr.insertCell();
+				var newTd1 = newTr.insertCell();
+				var newTd2 = newTr.insertCell();
+				var newTd3 = newTr.insertCell();
+				var newTd4 = newTr.insertCell();
+				// 赋值
+				newTd0.innerText = key;
+				newTd1.innerText = value;
+				newTd2.innerText = intercept;
+				newTd3.innerText = black;
+				newTd4.innerHTML = "<input type='button' value='删除' onclick='deleteTable(this)'>";
+			}
+			else {
+				alert("请把信息填写完整");
+				return;
+			}
+		}
+		function deleteTable(r) {
+			var i = r.parentNode.parentNode.rowIndex;
+			table.deleteRow(i);
+		}
+		function getTableContent(id){
+    		var mytable = document.getElementById(id);
+    		var data = [];
+    		for (var i = 0, rows = mytable.rows.length - 1; i < rows; i++){
+      			for (var j = 0, cells = mytable.rows[i + 1].cells.length - 1; j < cells; j++){
+        			if (!data[i]) {
+          				data[i] = new Array();
+        			}
+        			data[i][j] = mytable.rows[i + 1].cells[j].innerHTML;
+      			}
+    		}
+    		return data;
+  		}
+  		function send() {
+			alert(getTableContent('table'));
+			alert(JSON.stringify(getTableContent('table')));
+  			console.log(getTableContent('table'));
+			
+  		}
+  		
+	</script>
+</body>
+</html>
