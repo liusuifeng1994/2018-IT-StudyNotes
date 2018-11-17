@@ -1,8 +1,0 @@
-Spring学习主要分为两大部分：
-一、 Spring容器（IoC控制反转、DI依赖注入）
-重点模板：
-1. 创建Bean的方法；
-2. bean的属性：配置文件中如何配置bean的属性。
-二、 AOP面向切面编程
-1. 通知的类型及添加
-2. Advice+PointCut=Advisor
